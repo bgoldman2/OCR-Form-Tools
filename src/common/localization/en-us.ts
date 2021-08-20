@@ -70,8 +70,8 @@ export const english: IAppStrings = {
             description: "Try out the Form Recognizer Layout service to extract text, tables, selection marks and the structure of your document."
         },
         trainWithLabels: {
-            title: "Use Custom to train a model with labels and get key value pairs",
-            description: "You provide your own training data and do the learning. The model you create can train to your industry-specific forms."
+            title: "Import Digitalize and Analyze your Forms",
+            description: ""
         },
         quickStartGuide: "Quick start guide",
     },

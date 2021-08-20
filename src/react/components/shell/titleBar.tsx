@@ -122,9 +122,10 @@ export class TitleBar extends React.Component<ITitleBarProps, ITitleBarState> {
                         />
                     </Customizer>
                 }
-                <div className="title-bar-main">{this.props.title || "Welcome"}</div>
+                <div className="title-bar-main"> Formal</div>
                 <div className="title-bar-controls">
-                    {this.props.children}
+                    <Separator vertical key="seperator" className="mr-2 ml-2"/>,
+                    {/* {this.props.children}
                     {isElectronAndNotMacOrLinux &&
                         [
                             <Separator vertical key="seperator" className="mr-2 ml-2"/>,
@@ -141,7 +142,7 @@ export class TitleBar extends React.Component<ITitleBarProps, ITitleBarState> {
                                 <FontIcon className="app-close-icon" iconName="Cancel" onClick={this.closeWindow}/>
                             </div>
                         ]
-                    }
+                    } */}
                 </div>
             </div>
         );

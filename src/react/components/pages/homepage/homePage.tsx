@@ -4,6 +4,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React, {SyntheticEvent} from "react";
+import TaxdAI from "../../../../assets/TaxdAI.png"
 import {connect} from "react-redux";
 import {RouteComponentProps} from "react-router-dom";
 import {bindActionCreators} from "redux";
@@ -80,41 +81,27 @@ export default class HomePage extends React.Component<IHomePageProps, IHomePageS
     }
 
     public render() {
+        const myStyle = {
+            position: 'absolute' as 'absolute',
+            width: "15em",
+            height: "5em",
+            margin: "2em",
+        }
+
+        const CopyrightStyle = {
+            position: 'absolute' as 'absolute',
+            bottom: "1.5em"
+        }
         return (
             <div className="app-homepage" id="pageHome">
+                <img style={myStyle} alt={"Logo"}src={TaxdAI}></img>
+                <div style={CopyrightStyle}>
+                <span > COPYRIGHT © </span>
+                <a href={"https://www.anzrz.com/"}> ANZRZ</a>
+                 <span> - 2021 All Rights Reserved </span>
+                 </div>
                 <div className="app-homepage-main">
                     <ul>
-                        <li>
-                            <a id="home_prebuilt"
-                                onClick={this.onPrebuiltClicked}
-                                className="primary-link"
-                                role="button">
-                                <FontIcon iconName="ContactCard" className="icon-7x" />
-                                <div className="title">{strings.homePage.prebuiltPredict.title}</div>
-                                <div className="description">{strings.homePage.prebuiltPredict.description}</div>
-                            </a>
-                            <a className="quickstart"
-                                href="https://aka.ms/form-recognizer/pre-built"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                <FontIcon iconName="Rocket" />{strings.homePage.quickStartGuide}</a>
-                        </li>
-                        <li>
-                            <a onClick={this.onUseLayoutToGetTextAndTAblesClicked}
-                                className="primary-link"
-                                role="button">
-                                <FontIcon iconName="KeyPhraseExtraction" className="icon-7x" />
-                                <div className="title">{strings.homePage.layoutPredict.title}</div>
-                                <div className="description">
-                                    {strings.homePage.layoutPredict.description}
-                                </div>
-                            </a>
-                            <a className="quickstart"
-                                href="https://aka.ms/form-recognizer/layout"
-                                target="_blank"
-                                rel="noopener noreferrer">
-                                <FontIcon iconName="Rocket" />{strings.homePage.quickStartGuide}</a>
-                        </li>
                         <li>
                             <a onClick={this.onTrainAndUseAModelWithLables}
                                 className="primary-link"
@@ -125,11 +112,6 @@ export default class HomePage extends React.Component<IHomePageProps, IHomePageS
                                     {strings.homePage.trainWithLabels.description}
                                 </div>
                             </a>
-                            <a className="quickstart"
-                                href="https://aka.ms/form-recognizer/custom"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            ><FontIcon iconName="Rocket" />{strings.homePage.quickStartGuide}</a>
                         </li>
                         <CloudFilePicker
                             ref={this.cloudFilePickerRef}
